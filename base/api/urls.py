@@ -1,0 +1,19 @@
+from django.urls import path
+from . import views
+
+from rest_framework_simplejwt.views import (
+    TokenRefreshView,
+)
+
+
+urlpatterns = [
+    path("", views.get_routes),
+    path("token/", views.MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("animals/", views.FarmManagementView.as_view(), name="manage_animals"),
+    path(
+        "animals/<str:animal_id>/",
+        views.FarmManagementView.as_view(),
+        name="edit_animal",
+    ),
+]
