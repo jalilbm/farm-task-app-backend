@@ -21,7 +21,7 @@ To run this project locally, follow these steps:
 
    ```sh
     git clone https://github.com/jalilbm/farm-task-app-backend.git
-    cd farm-task-app-fronted
+    cd farm-task-app-backend
    ```
 
 2. **Environment Variables**:
