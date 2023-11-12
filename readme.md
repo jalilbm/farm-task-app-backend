@@ -2,22 +2,43 @@
 
 ## Overview
 
-This repository hosts the backend of a farm management web application, designed for use by a single farmer. It facilitates listing, adding, and removing animals, each uniquely identified by name.
+This repository contains the Django backend for a single-page web application designed for farm management. It's tailored for a single farmer, providing the functionality to list, add, edit, and remove animals, each uniquely identified by name.
 
-## Key Features
+## Features
 
-- **Intentional `.env` Inclusion**: The `.env` file is included in this repository purposefully as this project is a test.
-- **Extended JWT Lifetime**: Due to Heroku's ephemeral filesystem not saving `db.sqlite3` (treated as a static file), the JWT `ACCESS_TOKEN_LIFETIME` and `REFRESH_TOKEN_LIFETIME` have been extended from deployment until testing.
-- **Simple Authentication**: Added simple authentication using SIMPLE-JWT, which wasn't included in the original task, to enhance the application.
-- **Animals Data Updating**: Beyond the initial requirements, the feature to update (edit) animal data has been added for dynamic data management.
-- **Custom CSS and Tailwind**: Opted not to use UI frameworks like Ant Design or Material UI. Instead, demonstrated skills in Tailwind and custom CSS.
-- **Deployment**: Deployed the application on Heroku.
+- **PostgreSQL Integration**: Integrated PostgreSQL for user data management. This change enhances the application's scalability and data persistence capabilities.
+- **Simple JWT Authentication**: Implemented simple JWT-based authentication to ensure that only authenticated users can access and modify the data. This feature adds a layer of security and personalization to the application.
+- **CRUD Functionality for Animals**: Alongside listing, adding, and removing animals, the application also supports editing animal data, allowing for complete data management.
+- **Tailwind CSS**: Demonstrated proficiency in frontend design using Tailwind CSS, avoiding the use of UI frameworks like Ant Design or Material UI. This approach showcases custom styling skills.
+- **Deployment on Heroku**: The application backend is deployed on Heroku, leveraging its powerful cloud platform for hosting.
 
-## Testing the Application
+## Local Development
 
-- **Local Testing**: Create a superuser for local testing due to the authentication requirement. Only authenticated users (the farmer) can access the data.
-- **Deployed Version**: For testing the deployed version, no need to create a superuser. Username and password for testing will be provided via email.
+To run this project locally, follow these steps:
+
+1. **Clone the Repository**:
+
+   - Clone this repository to your local machine.
+
+2. **Environment Variables**:
+
+   - An `.env` file with necessary environment variables will be provided via email for connecting to the PostgreSQL database, and should be placed at the root directory (alongside `readme.md`).
+
+3. **Install Dependencies**:
+
+   - Install the required Python packages using `pip install -r requirements.txt`.
+
+4. **Start the Development Server**:
+
+   - Run the Django development server using `python manage.py runserver`.
+
+5. **Access the Application**:
+   - The application should be available at `http://localhost:8000`.
+
+## Testing
+
+- **Authentication Details**: For testing purposes, authentication credentials will be supplied via email.
 
 ## Note
 
-- If requested, I would have included tests in the project to ensure functionality and reliability.
+- The application has been developed with a focus on functionality and demonstration of technical skills. Test cases can be written and included upon request to ensure the reliability and robustness of the application.
