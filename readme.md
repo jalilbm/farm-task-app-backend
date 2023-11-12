@@ -20,7 +20,7 @@ To run this project locally, follow these steps:
    - Clone this repository to your local machine.
 
    ```sh
-    git clone https://github.com/jalilbm/farm-task-app-fronted.git
+    git clone https://github.com/jalilbm/farm-task-app-backend.git
     cd farm-task-app-fronted
    ```
 
