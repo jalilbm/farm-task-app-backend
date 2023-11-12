@@ -19,6 +19,11 @@ To run this project locally, follow these steps:
 
    - Clone this repository to your local machine.
 
+   ```sh
+    git clone https://github.com/jalilbm/farm-task-app-fronted.git
+    cd farm-task-app-fronted
+   ```
+
 2. **Environment Variables**:
 
    - An `.env` file with necessary environment variables will be provided via email for connecting to the PostgreSQL database, and should be placed at the root directory (alongside `readme.md`), and make sure that it's saved as `.env` not `env`
