@@ -30,6 +30,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG")
 
+
 ALLOWED_HOSTS = ["farm-task-app-backend-39e877dfc20e.herokuapp.com", "127.0.0.1"]
 
 
@@ -96,9 +97,7 @@ DATABASES = {
     #     "ENGINE": "django.db.backends.sqlite3",
     #     "NAME": BASE_DIR / "db.sqlite3",
     # }
-    "default": {
-        {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
-    }
+    {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
 }
 
 
