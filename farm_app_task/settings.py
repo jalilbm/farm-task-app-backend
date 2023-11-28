@@ -14,6 +14,8 @@ from pathlib import Path
 from datetime import timedelta
 from decouple import config
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +29,6 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG")
-
-DATABASE_NAME = config("DATABASE_NAME")
-DATABASE_USER = config("DATABASE_USER")
-DATABASE_PASSWORD = config("DATABASE_PASSWORD")
-DATABASE_HOST = config("DATABASE_HOST")
 
 ALLOWED_HOSTS = ["farm-task-app-backend-39e877dfc20e.herokuapp.com", "127.0.0.1"]
 
@@ -100,12 +97,7 @@ DATABASES = {
     #     "NAME": BASE_DIR / "db.sqlite3",
     # }
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": DATABASE_NAME,
-        "USER": DATABASE_USER,
-        "PASSWORD": DATABASE_PASSWORD,
-        "HOST": DATABASE_HOST,
-        "PORT": "5432",
+        {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
     }
 }
 
